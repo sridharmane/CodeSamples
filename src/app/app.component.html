@@ -1,3 +1,15 @@
-<h1>
-  {{title}}
-</h1>
+
+
+<md-toolbar color="primary">Fibonacci Series: Number at position <md-input-container>
+<input mdInput [value]="fibPosition" (change)="setFibPosition($event)" />
+</md-input-container></md-toolbar>
+<md-card>
+  <md-card-title>With ForLoop</md-card-title>
+  <md-card-subtitle>{{performance.fibSeriesWithFor}} ms</md-card-subtitle>
+  <md-card-content>{{values.fibNumberWithFor }}</md-card-content>
+</md-card>
+<md-card>
+  <md-card-title>With Recursion</md-card-title>
+  <md-card-subtitle>{{performance.fibSeriesWithRecursion}} ms</md-card-subtitle>
+  <md-card-content>{{ values.fibNumberWithRecursion }}</md-card-content>
+</md-card>
