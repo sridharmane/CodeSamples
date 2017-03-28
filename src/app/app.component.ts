@@ -3,19 +3,20 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'app works!';
   fibPosition = 0;
   fibSeriesWithFor :number[] = [];
   performance = {
-    fibSeriesWithFor:0,
-    fibSeriesWithRecursion:0
+    fibNumWithFor:0,
+    fibNumWithWhile:0,
+    fibNumWithRecursion:0
   };
   values = {
-    fibNumberWithFor :0,
-    fibNumberWithRecursion:0
+    fibNumWithFor :0,
+    fibNumWithRecursion:0
   }
   fibSeriesWithRecursion :any = [];
 
@@ -40,16 +41,16 @@ export class AppComponent {
       y = currentSum;
       }
     }
-    this.values.fibNumberWithFor= currentSum;
+    this.values.fibNumWithFor= currentSum;
 
     let t1 = performance.now();
-    this.performance.fibSeriesWithFor = t1-t0;
+    this.performance.fibNumWithFor = t1-t0;
   }
   generateFibSeriesWithRecursion(){
     let t0 = performance.now();
-    this.values.fibNumberWithRecursion = this.fibRecursion(this.fibPosition);
+    this.values.fibNumWithRecursion = this.fibRecursion(this.fibPosition);
     let t1 = performance.now();
-    this.performance.fibSeriesWithRecursion = t1-t0;
+    this.performance.fibNumWithRecursion = t1-t0;
   }
   fibRecursion(position: number){
     if(position <= 1){
